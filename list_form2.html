@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="ultimate.css">
+</head>
+
+<body>
+   <div class="default">
+   <h2>Показати всі вулиці</h2>
+
+   <form action="">
+
+      <select onchange="showStreets(this.selectedIndex,'streets');" id="reg_select">
+
+         <option>Виберіть район</option>
+
+         <option>Галицький</option>
+
+         <option>Франківський</option>
+
+         <option>Личаківський</option>
+
+         <option>Сихівський</option>
+
+         <option>Шевченківський</option>
+
+         <option value="All">All</option>
+
+
+         <select>
+
+            Вулиці:
+
+            <select id='streets' style='visibility:hidden;'>
+
+               <option></option>
+
+
+            </select>
+         </select>
+      </select>
+   </form>
+   </div>
+</body>
+
+<script src="lb9_2.js"></script>
+
+</html>

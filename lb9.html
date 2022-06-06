@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="ultimate.css">
+</head>
+
+<body onload="assignFunctionToCheckboxes();">
+   <form class="input-area">
+
+      <table>
+
+         <tr>
+
+            <td>
+
+               Введіть пароль:
+
+            </td>
+
+            <td>
+
+               <input type="password" id="pwd1" onkeyup="editPassword(this.id,'message',8,16);">
+
+            </td>
+
+            <td>
+
+               <font id="message" style="font-size: 8pt;"></font>
+
+            </td>
+
+         </tr>
+
+      </table>
+
+   </form>
+
+   <br><br><br>
+
+   <area shape="poly" coords="0,5,10,10,20,5" href="img/me.jpg">
+
+
+   <br><br><br>
+
+   <div class="styling">
+   <select onchange="showStreets(this.selectedIndex,'streets');">
+
+      <option>Виберіть район</option>
+
+      <option>Галицький</option>
+
+      <option>Франківський</option>
+
+      <option>Личаківський</option>
+
+      <option>Сихівський</option>
+
+      <option>Шевченківський</option>
+
+      </option>
+
+      <select>
+
+         Вулиці:
+
+         <select id='streets' style='visibility:hidden;'>
+
+            <option></option>
+
+
+         </select>
+      </select>
+   </select>
+
+   </div>
+
+   <br><br><br>
+
+
+   <table class="view" border="1" cellspacing="0" cellpadding="5" bordercolor="#000000">
+<thead class="view">
+      <tr>
+
+         <td></td>
+
+         <td>Назва товару</td>
+
+         <td>Виробник</td>
+
+         <td>Ціна</td>
+
+      </tr>
+</thead>
+<tbody class="view">
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="98"></td>
+
+         <td>Монітори CRT</td>
+         <td>LG</td>
+         <td>98</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="132"></td>
+
+         <td>Монітори CRT</td>
+         <td>Samsung</td>
+         <td>132</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="419"></td>
+
+         <td>Монітори TFT</td>
+         <td>Samsung</td>
+         <td>419</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="68"></td>
+
+         <td>HDD</td>
+         <td>Seagate</td>
+         <td>68</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="161"></td>
+
+         <td>HDD</td>
+         <td>Hitachi</td>
+         <td>161</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="14"></td>
+
+         <td>CD ROM</td>
+         <td>LG</td>
+         <td>14</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="16"></td>
+
+         <td>CD ROM</td>
+         <td>Asus</td>
+         <td>16</td>
+
+      </tr>
+
+      <tr>
+
+         <td><input type="checkbox" name="goods" value="32"></td>
+
+         <td>DVD ROM</td>
+         <td>Toshiba</td>
+         <td>32</td>
+
+      </tr>
+
+</tbody>
+<tfoot class="view">
+
+      <tr>
+
+         <td colspan="4" align="center">Сума:&nbsp;<font id="price"></font>
+         </td>
+
+      </tr>
+</tfoot>
+   </table>
+
+
+</body>
+
+<script>
+
+   
+
+   function getTotalPrice() {
+
+      var sum = 0; 
+
+      var boxes = document.getElementsByName('goods'); 
+
+
+
+
+      for (var i = 0; i < boxes.length; i++)
+
+         if (boxes[i].checked) 
+
+            sum = sum + (new Number(boxes[i].value));
+
+
+
+
+      document.getElementById('price').innerText = sum;
+
+   }
+
+
+
+   function assignFunctionToCheckboxes() {
+
+      var boxes = document.getElementsByName('goods'); 
+
+      for (var i = 0; i < boxes.length; i++) 
+
+         boxes[i].onclick = getTotalPrice; 
+   }
+
+</script>
+
+
+
+
+
+<script>
+
+   
+
+   var streetsGal = new Array('Галицька', 'Ставропігійська', 'Краківська', 'Театральна', 'Вірменська');
+
+   var streetsShev = new Array('Чорновола', 'Остряниці', 'Замарстинівська', 'Топольна', 'Варшавська');
+
+   var streetsFran = new Array('Сахарова', 'Наукова', 'Княгині Ольги', 'В.Великого');
+
+   var streetsLych = new Array('Личаківська', 'Пекарська', 'Нечуя-Левицького', 'Зелена');
+
+   var streetsSykh = new Array('Хоткевича', 'Червоної Калини');
+
+   
+
+   var streetsAll = new Array(null, streetsGal, streetsFran, streetsLych, streetsSykh, streetsShev);
+
+
+
+   function showStreets(regionIndex, selectId) {
+
+      if (regionIndex <= 0) {
+
+         streetsSelect.style.visibility = 'hidden';
+
+         return false;
+
+      }
+
+      
+
+      var streetsSelect = document.getElementById(selectId);
+
+      clearSelect(streetsSelect); 
+
+      streetsSelect.style.visibility = 'visible'; 
+      
+
+      for (var i = 0; i < streetsAll[regionIndex].length; i++) {
+
+         var newStreet = new Option((streetsAll[regionIndex])[i], (streetsAll[regionIndex])[i]);
+
+         streetsSelect.add(newStreet, i); 
+
+      }
+
+   }
+
+   function clearSelect(selectObject) {
+
+      while (selectObject.length) 
+
+         selectObject.remove(0);
+
+   }
+
+   var streetsAll = new Array(null, streetsGal.sort(), streetsFran.sort(), streetsLych.sort(), streetsSykh.sort(), streetsShev.sort());
+
+
+
+   function zoomMap(zoom, imageId) { 
+
+      var karta = document.getElementById(imageId); 
+
+      var areas = document.all.map.areas; 
+      for (var i = 0; i < areas.length; i++)  {
+
+         var coords = (areas[i].coords).split(','); 
+
+         for (var j = 0; j < coords.length; j++)  {
+
+            coords[j] = Math.round(coords[j] * zoom);
+
+         }
+
+         areas[i].coords = coords.join(','); 
+
+      }
+
+      
+      karta.width = Math.round((karta.width) * zoom);
+
+      karta.height = Math.round((karta.height) * zoom);
+
+   }
+
+</script>
+
+
+
+
+<script>
+
+   function editPassword(password, messageId, minLength, maxLength) { 
+
+      var password = document.getElementById(password); 
+
+      var message = document.getElementById(messageId); 
+
+
+
+      if (password.value.length < minLength) 
+
+         message.innerText = 'Надійний пароль повинен містити не менше ' + minLength + ' символів';
+
+         message.style.color = '#ff0000'; /* Задаємо тексту червоний колір */
+
+      }
+
+      else
+
+         if (password.value.length > maxLength)  {
+
+            message.innerText = 'Довжина паролю не повинна перевищувати ' + maxLength + ' символів';
+
+            message.style.color = '#ff0000';
+
+         }
+
+         else  {
+
+            message.innerText = 'Ok';
+
+            message.style.color = '#00cc00';
+
+            return true;
+
+         }
+
+   }
+
+</script>
+
+
+</html>

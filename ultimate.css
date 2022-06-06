@@ -1,0 +1,56 @@
+body {
+	background-color: #BED8D4;
+	color: #F7F9F9;
+
+}
+
+.input-area {
+	height: 50px;
+	width: 275px;
+	border-radius: 25px;
+	padding: 10px;
+	background-color: #63D2FF;
+
+}
+
+.styling {
+	height: 25px;
+	width: 275px;
+	border-radius: 25px;
+	padding: 10px;
+	background-color: #63D2FF;
+
+}
+
+.default {
+	background-color: #63D2FF;
+	min-height: 300px;
+	min-width: 100px;
+}
+
+
+.view {
+  table-layout: fixed;
+  width: 50%;
+  border-collapse: collapse;
+  border: 3px solid #074F57;
+  background-color: #63D2FF;
+}
+
+.view th:nth-child(1) {
+  width: 30%;
+}
+
+.view th:nth-child(2) {
+  width: 20%;
+}
+.view th:nth-child(3) {
+  width: 15%;
+}
+.view th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 10px;
+}
