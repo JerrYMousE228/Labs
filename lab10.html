@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="Nastille.css">
+</head>
+
+<body onload="checker()">
+   <div class="modno">
+   <h2>Файна форма:</h2>
+   <form action="" id="f1">
+      <input type="text" id="UN" onkeyup="checker()">
+      <br><br>
+
+      <input type="password" id="pwd" onkeyup="checker()">
+      <br><br>
+
+      <select id="city" onchange="checker()">
+         <option>Виберіть місто</option>
+         <option>Львів</option>
+         <option>Київ</option>
+         <option>Одеса</option>
+         <option>Харків</option>
+      </select>
+      <button type="button" onclick="deleteItem()">Remove selected</button>
+      <br><br>
+
+      <input type="text" id="newElement" placeholder="Add city">
+      <button type="button" onclick="addToList()">Add city</button>
+      <br><br>
+
+      <input type="submit" value="Submit" id="send">
+   </form>
+   </div>
+   <br><br>
+   
+   <div class="modno">
+   <h2>Перевірка номеру:</h2>
+   <input type="text" id="phone" placeholder="Phone">
+   <button type="button" id="phone-check">Check</button>
+   </div>
+   <br><br>
+   
+   <div class="modno">
+   <h2>Перевірка стаціонарного номеру:</h2>
+   <input type="text" id="sphone" placeholder="SPhone">
+   <button type="button" id="sphone-check">Check</button>
+   </div>
+   <br><br>
+   
+   <div class="modno">
+   <h2>Видаляю зайві пробіли:</h2>
+   <input type="text" placeholder="Remove estra spaces" onblur="this.value=removeRedundantSpaces(this.value);">
+   </div>
+   <br><br>
+   
+   <div class="modno">
+   <h2>Видаляєм HTML теги:</h2>
+   <textarea rows="20" cols="20" id="editor">
+
+      <html>
+      
+      <i>some text<i>
+      
+      <b>some text</i>
+      
+      <br>
+      
+      <br>
+      
+      <br>
+      
+      </html>
+      
+   </textarea>
+   <input type="button" value="Clear text" onclick="clearTextFromHTMLTags(document.getElementById('editor').value);">
+   </div>
+
+   <br><br><br>
+   
+   <div class="modno">
+   <h2>Перевірка на цифри:</h2>
+   <input type="text" id="num" placeholder="Numbers only">
+   <button type="button" onclick="checkWholePositiveNumber(document.getElementById('num').value)">Check</button>
+   </div>
+   <br><br><br>
+   
+   <div class="modno">
+   <h2>Зміна паролю:</h2>
+   <input type="password" id="pswd">
+   <button type="button" id="pswd-change">Change</button>
+   </div>
+   <br><br><br>
+   
+   <div class="modno">
+   <h2>Сховати трошки таблицю:</h2>
+   <style>
+      table,th,td {
+         border: 1px solid;
+      }
+      td{
+         width: 200px;
+         background-color: bisque;
+      }
+   </style>
+
+   <table>
+      <tr id="row1">
+         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+      </tr>
+      <tr id="row2">
+         <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ullam explicabo incidunt est, voluptas deserunt?</td>
+         <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ullam explicabo incidunt est, voluptas deserunt?</td>
+      </tr>
+      <tr id="row3">
+         <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ullam explicabo incidunt est, voluptas deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+         <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum ullam explicabo incidunt est, voluptas deserunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+      </tr>
+   </table>
+   <br>
+   <button type="button" id="hide-rows">Hide</button>
+    </div>
+   <br><br><br>
+
+</body>
+<script src="lab10.js"></script>
+
+</html>

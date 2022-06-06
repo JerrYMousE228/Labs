@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="Nastille.css">
+</head>
+
+<body>
+   <div class="modno">
+   <h2>Файна форма:</h2>
+   <form action="" id="f1">
+      <input type="text" id="username" placeholder="Username" onkeyup="checker()">
+      <br><br>
+
+      <input type="password" placeholder="Password" id="password" onkeyup="checker()">
+      <br><br>
+      <input type="password" placeholder="Password confirmation" id="confirm_password" onkeyup="checker()">
+      <br><br>
+
+      <select id="city" onchange="checker()">
+         <option>Виберіть місто</option>
+         <option>Львів</option>
+         <option>Київ</option>
+         <option>Одеса</option>
+         <option>Харків</option>
+      </select>
+
+      <button id="send" disabled>Submit</button>
+   </form>
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Перевірка номеру тирліфону:</h2>
+   <input type="text" id="phone">
+   <button type="button" onclick="checkPhone();">Check</button>
+   <br>
+   <span id="inform"></span>
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Перевірка поштового індексу:</h2>
+   <input type="text" id="post_index">
+   <button type="button" onclick="checkPostIndex();">Check</button>
+   <br>
+   <span id="inform2"></span>
+   </div>
+   <br><br><br>
+
+
+   <div class="modno">
+   <h2>Перевірка стаціонарного номеру тирліфону:</h2>
+   <input type="text" id="lphone">
+   <button type="button" onclick="checkLandLinePhone();">Check</button>
+   <br>
+   <span id="inform3"></span>
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Видаляємо HTML коментарі:</h2>
+   <textarea rows="5" cols="20" id="editor">
+   <!-- comment -->
+   not a comment
+   </textarea>
+   <br>
+   <input type="button" value="Clear from comments" onclick="clearComments();">
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Видаляємо HTML теги:</h2>
+   <textarea rows="7" cols="20" id="editor2">
+   <p>Some text</p>
+   <font></font>
+   <br>
+   <hr>
+   not a tag
+   </textarea>
+   <br>
+   <input type="button" value="Clear from tags" onclick="clearTags();">
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Видаляємо, які пробіли зайві:</h2>
+   <input type="text" id="spaces_filled">
+   <button type="button" onclick="removeSpaces();">Trim string</button>
+   <br>
+   <span id="inform4"></span>
+   </div>
+   <br><br><br>
+
+   <div class="modno">
+   <h2>Перевірка року:</h2>
+   <input type="text" id="year">
+   <button type="button" onclick="checkYear();">Check</button>
+   <br>
+   <span id="inform5"></span>
+   </div>
+   <br><br><br>
+
+</body>
+<script src="lab10_2.js"></script>
+
+</html>
